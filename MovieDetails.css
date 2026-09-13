@@ -1,0 +1,850 @@
+/* =========================================
+   MOVIE DETAILS PAGE
+========================================= */
+
+.details-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(3, 3, 7, 0.88),
+      rgba(3, 3, 7, 0.98)
+    ),
+    url("./assets/cinebluemoon-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: white;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.details-navbar {
+  height: 78px;
+
+  padding: 0 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(5, 5, 8, 0.88);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(15px);
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.details-navbar h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  letter-spacing: 2px;
+}
+
+.details-navbar h2 span {
+  color: #718df0;
+}
+
+.details-back {
+  padding: 9px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  transition: 0.25s;
+}
+
+.details-back:hover {
+  background: #315fe8;
+
+  border-color: #315fe8;
+
+  transform: translateX(-2px);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.details-container {
+  width: min(1150px, 92%);
+
+  margin: auto;
+
+  padding: 55px 0 70px;
+}
+
+
+/* =========================================
+   MOVIE CARD
+========================================= */
+
+.movie-details-card {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 300px 1fr;
+
+  gap: 48px;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================
+   POSTER
+========================================= */
+
+.details-poster-box {
+  width: 300px;
+
+  height: 450px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background: #111117;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.65);
+}
+
+.details-poster-box img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: 0.4s ease;
+}
+
+.movie-details-card:hover
+.details-poster-box img {
+  transform: scale(1.025);
+}
+
+.poster-price {
+  position: absolute;
+
+  left: 12px;
+  bottom: 12px;
+
+  padding: 8px 12px;
+
+  border-radius: 6px;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.details-content {
+  min-width: 0;
+
+  padding: 5px 5px 0 0;
+}
+
+.details-label {
+  color: #718df0;
+
+  font-size: 10px;
+
+  font-weight: bold;
+
+  letter-spacing: 3px;
+}
+
+.details-content h1 {
+  margin: 9px 0 8px;
+
+  font-size: 42px;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+}
+
+.movie-meta {
+  color: #f2c94c;
+
+  font-size: 13px;
+}
+
+.movie-meta span {
+  color: #666671;
+
+  margin: 0 4px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.details-description {
+  margin: 17px 0 0;
+
+  max-width: 720px;
+
+  color: #a8a8b3;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CAST / CREW
+========================================= */
+
+.details-cast {
+  margin-top: 22px;
+
+  padding: 18px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr;
+
+  gap: 22px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.details-cast span {
+  display: block;
+
+  color: #718df0;
+
+  font-size: 9px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+.details-cast p {
+  margin: 7px 0 0;
+
+  color: #aaaab5;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+.details-divider {
+  display: none;
+}
+
+
+/* =========================================
+   CHOICE SECTION
+========================================= */
+
+.choice-section {
+  margin-top: 20px;
+}
+
+.choice-section h3 {
+  margin: 0 0 10px;
+
+  color: white;
+
+  font-size: 13px;
+}
+
+.choice-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.choice {
+  min-width: 72px;
+
+  padding: 10px 15px;
+
+  border:
+    1px solid #363946;
+
+  border-radius: 7px;
+
+  background: #15161c;
+
+  color: #aaaab5;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  transition: 0.2s;
+}
+
+.choice small {
+  color: #777782;
+
+  font-size: 10px;
+}
+
+.choice:hover {
+  border-color: #718df0;
+
+  color: white;
+}
+
+.choice.active {
+  background: #315fe8;
+
+  border-color: #527cff;
+
+  color: white;
+
+  box-shadow:
+    0 5px 15px rgba(49, 95, 232, 0.25);
+}
+
+.choice.active small {
+  color: #dce4ff;
+}
+
+
+/* =========================================
+   DATE BUTTONS
+========================================= */
+
+.date-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.date-btn {
+  min-width: 78px;
+
+  padding: 9px 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  border:
+    1px solid #363946;
+
+  border-radius: 8px;
+
+  background: #15161c;
+
+  color: #9999a5;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.date-btn strong {
+  color: white;
+
+  font-size: 11px;
+}
+
+.date-btn span {
+  font-size: 10px;
+}
+
+.date-btn:hover {
+  border-color: #718df0;
+
+  transform: translateY(-1px);
+}
+
+.date-btn.active {
+  background: #315fe8;
+
+  border-color: #527cff;
+
+  color: white;
+
+  box-shadow:
+    0 5px 15px rgba(49, 95, 232, 0.25);
+}
+
+
+/* =========================================
+   TIME BUTTONS
+========================================= */
+
+.time-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.time-btn {
+  padding: 10px 15px;
+
+  border:
+    1px solid #363946;
+
+  border-radius: 7px;
+
+  background: #15161c;
+
+  color: #aaaab5;
+
+  cursor: pointer;
+
+  font-size: 11px;
+
+  transition: 0.2s;
+}
+
+.time-btn:hover {
+  border-color: #718df0;
+
+  color: white;
+}
+
+.time-btn.active {
+  background: #315fe8;
+
+  border-color: #527cff;
+
+  color: white;
+
+  box-shadow:
+    0 5px 15px rgba(49, 95, 232, 0.25);
+}
+
+
+/* =========================================
+   MEMBERS
+========================================= */
+
+.members-section {
+  margin-top: 22px;
+
+  padding: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.members-section h3 {
+  margin: 0 0 5px;
+
+  font-size: 13px;
+}
+
+.members-section small {
+  color: #777782;
+
+  font-size: 10px;
+}
+
+.member-control {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.member-control button {
+  width: 32px;
+
+  height: 32px;
+
+  border:
+    1px solid #3d4050;
+
+  border-radius: 6px;
+
+  background: #15161c;
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.member-control button:hover {
+  background: #315fe8;
+
+  border-color: #315fe8;
+}
+
+.member-control strong {
+  min-width: 20px;
+
+  text-align: center;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.details-summary {
+  margin-top: 20px;
+
+  padding: 17px 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+}
+
+.details-summary div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.details-summary span {
+  color: #777782;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.details-summary strong {
+  color: white;
+
+  font-size: 13px;
+}
+
+.summary-total {
+  text-align: right;
+}
+
+.summary-total strong {
+  color: #8fa6ff;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.continue-details {
+  width: 100%;
+
+  margin-top: 18px;
+
+  padding: 14px 20px;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: #315fe8;
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.continue-details:hover {
+  background: #244dcc;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(49, 95, 232, 0.25);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .details-container {
+    width: 92%;
+
+    padding-top: 35px;
+  }
+
+  .movie-details-card {
+    grid-template-columns: 230px 1fr;
+
+    gap: 30px;
+
+    padding: 22px;
+  }
+
+  .details-poster-box {
+    width: 230px;
+
+    height: 345px;
+  }
+
+  .details-content h1 {
+    font-size: 32px;
+  }
+
+  .details-cast {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .details-cast > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .details-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .summary-total {
+    text-align: left;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .details-navbar {
+    height: 68px;
+
+    padding: 0 18px;
+  }
+
+  .details-navbar h2 {
+    font-size: 15px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .details-back {
+    padding: 8px 12px;
+
+    font-size: 11px;
+  }
+
+  .details-container {
+    width: 92%;
+
+    padding: 25px 0 45px;
+  }
+
+  .movie-details-card {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 17px;
+
+    border-radius: 14px;
+  }
+
+  .details-poster-box {
+    width: 210px;
+
+    height: 315px;
+
+    margin: auto;
+  }
+
+  .details-content {
+    padding: 0;
+  }
+
+  .details-content h1 {
+    font-size: 28px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .details-description {
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+  .details-cast {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .details-cast > div:last-child {
+    grid-column: auto;
+  }
+
+  .choice {
+    padding: 9px 13px;
+  }
+
+  .date-btn {
+    min-width: 70px;
+
+    padding: 8px 9px;
+  }
+
+  .time-btn {
+    padding: 9px 12px;
+  }
+
+  .members-section {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .member-control {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .member-control button {
+    width: 38px;
+
+    height: 34px;
+  }
+
+  .details-summary {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+  }
+
+  .summary-total {
+    grid-column: 1 / -1;
+
+    padding-top: 10px;
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.08);
+
+    text-align: left;
+  }
+
+  .summary-total strong {
+    font-size: 19px;
+  }
+}
